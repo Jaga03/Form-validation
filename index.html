@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="logo" width="110px" height="40px">
+        <p>.in</p>
+    </header>
+    <section class="vh-100">
+        <div class="d-flex align-items-center h-100">
+            <div class="container h-100 w-75">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="card mb-5 form-container" style="border-radius: 15px; border: 2px solid black;">
+                            <div class="card-body p-3">
+                                <h2 class="text-left mb-3">Create Account</h2>
+                                <form onsubmit="validataform(); event.preventDefault()">
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="form-label fw-bold" for="name">Your Name</label>
+                                        <input type="text" id="name" class="form-control form-control-lg" placeholder="Name" aria-describedby="nameError" />
+                                        <small id="nameError" class="error" aria-live="polite"></small>
+                                    </div>
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="form-label fw-bold" for="mobile">Mobile Number</label>
+                                        <div class="d-flex">
+                                            <select class="rounded">
+                                                <option>+91</option>
+                                            </select>
+                                            <input type="tel" id="mobile" class="form-control form-control-lg" placeholder="Mobile number" aria-describedby="mobileError" />
+                                        </div>
+                                        <small id="mobileError" class="error" aria-live="polite"></small>
+                                    </div>
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="form-label fw-bold" for="email">Your Email</label>
+                                        <input type="email" id="email" class="form-control form-control-lg" placeholder="Your Email" aria-describedby="emailError" />
+                                        <small id="emailError" class="error" aria-live="polite"></small>
+                                    </div>
+                                    <div data-mdb-input-init class="form-outline mb-4 password-container">
+                                        <label class="form-label fw-bold" for="password">Password</label>
+                                        <input type="password" id="password" class="form-control form-control-lg" placeholder="Password" aria-describedby="passwordError" />
+                                        <i class="fa-regular fa-eye" id="eye" onclick="showpassword()"></i>
+                                        <small id="passwordError" class="error" aria-live="polite"></small>
+                                    </div>
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="form-label fw-bold" for="address">Address</label>
+                                        <textarea type="text" id="address" class="form-control form-control-lg" placeholder="Your Address" aria-describedby="addressError"></textarea>
+                                        <small id="addressError" class="error" aria-live="polite"></small>
+                                    </div>
+
+                                    <div class="form-check d-flex justify-content-center mb-5">
+                                        <input class="form-check-input me-2" type="checkbox" id="terms" />
+                                        <label class="form-check-label" for="terms">
+                                            I agree to all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                                        </label>
+                                    </div>
+
+                                    <div class="d-flex justify-content-center">
+                                        <input type="submit" class="btn btn-warning btn-block btn-lg text-body" value="Register" />
+                                    </div>
+
+                                    <p class="text-center text-muted mt-5 mb-2">Already have an account? <a href="#!" class="fw-bold text-body"><u>Login here</u></a></p>
+                                </form>
+                                <p id="success" aria-live="assertive"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>
